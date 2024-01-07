@@ -1,0 +1,60 @@
+﻿@page
+@model Proiect_aplicatieWeb.Pages.Programari.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Programare</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label class="control-label" for="Programare.IdPacient">Pacient</label>
+                <select class="form-control" asp-for="Programare.PacientId" asp-items="@(ViewData["Pacienti"] as SelectList)"></select>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label" for="Programare_MedicId">Medic</label>
+                <select class="form-control" asp-for="Programare.MedicId" asp-items="@(ViewData["MedicId"] as SelectList)"></select>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="Programare_InterventieId">Interventie</label>
+                <select class="form-control" asp-for="Programare.InterventieId" asp-items="@(ViewData["InterventieId"] as SelectList)"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Programare.Data" class="control-label"></label>
+                <input asp-for="Programare.Data" class="form-control" />
+                <span asp-validation-for="Programare.Data" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Programare.Ora" class="control-label"></label>
+                <input asp-for="Programare.Ora" class="form-control" />
+                <span asp-validation-for="Programare.Ora" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

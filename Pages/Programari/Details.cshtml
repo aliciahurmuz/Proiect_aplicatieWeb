@@ -1,0 +1,49 @@
+﻿@page
+@model Proiect_aplicatieWeb.Pages.Programari.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Programare</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.PacientId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.PacientId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.Medic)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.Medic.Nume)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.Interventie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.Interventie.Denumire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.Data)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.Data)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Programare.Ora)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Programare.Ora)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Programare.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

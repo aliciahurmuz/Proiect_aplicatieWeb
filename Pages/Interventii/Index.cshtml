@@ -1,0 +1,58 @@
+﻿@page "/Interventii/Index"
+@model Proiect_aplicatieWeb.Pages.Interventii.IndexModel
+
+@{
+    ViewData["Title"] = "Interventii";
+}
+
+<h1>Interventii</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<form method="get">
+    <div class="form-group">
+        <label for="searchString">Cauta dupa specializare:</label>
+        <input type="text" class="form-control" name="searchString" value="@Model.CurrentFilter" />
+    </div>
+    <button type="submit" class="btn btn-primary">Cauta</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Interventie[0].Denumire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Interventie[0].Specializare)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Interventie[0].Pret)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Interventie)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Denumire)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Specializare.Denumire)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pret)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
