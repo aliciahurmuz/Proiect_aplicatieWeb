@@ -18,7 +18,6 @@ namespace Proiect_aplicatieWeb.Models
         [Required(ErrorMessage = "Obligatoriu de completat")]
         public int SpecializareId { get; set; }
 
-        //[ForeignKey("IdSpecializare")]
         public Specializare Specializare { get; set; }
 
         public string Telefon { get; set; }

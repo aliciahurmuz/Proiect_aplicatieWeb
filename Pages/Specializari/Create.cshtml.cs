@@ -27,7 +27,6 @@ namespace Proiect_aplicatieWeb.Pages.Specializari
         [BindProperty]
         public Specializare Specializare { get; set; } = default!;
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)

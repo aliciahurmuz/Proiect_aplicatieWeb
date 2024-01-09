@@ -21,8 +21,6 @@ namespace Proiect_aplicatieWeb.Pages.Interventii
 
         public IList<Interventie> Interventie { get;set; } = default!;
         public string CurrentFilter { get; set; }
-
-        // Adaugă un nou parametru pentru căutare în metoda OnGetAsync
         public async Task OnGetAsync(string searchString)
         {
             IQueryable<Interventie> interventiiQuery = _context.Interventie.Include(i => i.Specializare);

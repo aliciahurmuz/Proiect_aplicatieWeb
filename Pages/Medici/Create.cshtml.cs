@@ -28,12 +28,10 @@ namespace Proiect_aplicatieWeb.Pages.Medici
         [BindProperty]
         public Medic Medic { get; set; } = default!;
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
             Medic.SpecializareId = int.Parse(Request.Form["Medic.SpecializareId"]);
 
-            // Manually validate SpecializareId
             if (Medic.SpecializareId <= 0)
             {
                 ModelState.AddModelError(nameof(Medic.SpecializareId), "Please select a valid Specializare");
@@ -41,7 +39,7 @@ namespace Proiect_aplicatieWeb.Pages.Medici
 
             ModelState.Remove("Medic.Specializare");
 
-            // Check if ModelState is valid after manual validation
+
             if (!ModelState.IsValid)
             {
                 return Page();

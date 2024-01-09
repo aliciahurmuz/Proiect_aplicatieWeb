@@ -28,12 +28,11 @@ namespace Proiect_aplicatieWeb.Pages.Interventii
         [BindProperty]
         public Interventie Interventie { get; set; } = default!;
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+        
         public async Task<IActionResult> OnPostAsync()
         {
             Interventie.SpecializareId = int.Parse(Request.Form["Interventie.SpecializareId"]);
 
-            // Manually validate SpecializareId
             if (Interventie.SpecializareId <= 0)
             {
                 ModelState.AddModelError(nameof(Interventie.SpecializareId), "Please select a valid Specializare");

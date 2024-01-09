@@ -5,10 +5,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proiect_aplicatieWeb.Migrations
 {
-    /// <inheritdoc />
     public partial class UpdateProgramare : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
@@ -16,7 +14,6 @@ namespace Proiect_aplicatieWeb.Migrations
                 table: "Programare");
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(

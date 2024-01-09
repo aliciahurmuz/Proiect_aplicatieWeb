@@ -5,10 +5,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Proiect_aplicatieWeb.Migrations
 {
-    /// <inheritdoc />
     public partial class CreateDatabase : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -147,8 +145,6 @@ namespace Proiect_aplicatieWeb.Migrations
                 table: "Programare",
                 column: "PacientId");
         }
-
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
